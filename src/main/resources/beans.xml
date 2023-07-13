@@ -11,29 +11,24 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<!-- <bean id="stu" class="com.SpringInjectingObjectType.Student">
-		<property name="mathcheat">
-			instead of creating like this two times
-			<bean class="com.SpringInjectingObjectType.MathCheat"></bean>
-		</property>
-	</bean>
-	<bean id="another"
-		class="com.SpringInjectingObjectType.AnotherStudent">
-		<property name="cheat">
-			instead of creating the like this two time
-			<bean class="com.SpringInjectingObjectType.MathCheat"></bean>
-		</property>
-	</bean> -->
+	<!-- <bean id="stu" class="com.SpringInjectingObjectType.Student"> <property 
+		name="mathcheat"> instead of creating like this two times <bean class="com.SpringInjectingObjectType.MathCheat"></bean> 
+		</property> </bean> <bean id="another" class="com.SpringInjectingObjectType.AnotherStudent"> 
+		<property name="cheat"> instead of creating the like this two time <bean 
+		class="com.SpringInjectingObjectType.MathCheat"></bean> </property> </bean> -->
 
 
-	<bean id="mathCheatObject" class="com.SpringInjectingObjectType.MathCheat"></bean>
-	<bean id="stu" class="com.SpringInjectingObjectType.Student">
-		<property name="mathcheat" ref="mathCheatObject" />
-	</bean>
-	<bean id="another"
-		class="com.SpringInjectingObjectType.AnotherStudent">
-		<property name="cheat" ref="mathCheatObject" />
-	</bean>
+	<!-- <bean id="mathCheatObject" class="com.SpringInjectingObjectType.MathCheat"></bean> 
+		<bean id="stu" class="com.SpringInjectingObjectType.Student"> <property name="mathcheat" 
+		ref="mathCheatObject" /> </bean> <bean id="another" class="com.SpringInjectingObjectType.AnotherStudent"> 
+		<property name="cheat" ref="mathCheat Object" /> </bean> -->
+		
+		
+	<!-- this is loose coupling configuration -->
+	<bean id="javaobj" class="com.SpringInjectingObjectType.Java"></bean>
+	<bean id="newstu" class="com.SpringInjectingObjectType.NewStudent">
+		<property name="cheat" ref="javaobj" />
 
+	</bean>
 
 </beans>
